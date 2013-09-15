@@ -2,8 +2,12 @@ Jtmht::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  get ':verb/in/:technology' => 'tutorial_pages#show'
+  get ':verb/in/:technology/version/:technology_version' => 'tutorial_pages#show'
+  get ':verb/in/:technology/v/:technology_version' => 'tutorial_pages#show'
+
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'static_pages#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -53,4 +57,6 @@ Jtmht::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  
 end

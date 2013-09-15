@@ -1,0 +1,11 @@
+{
+	"canonical_name": "python", // This is the name used in the url string and as the filename. No spaces; just dashes. Possibly periods
+	"default_version": "",      // Default version to fall back to if no other version is given. Assumed to exist for all verbs
+	"similar_technologies": [   // Similar technologies (canonical names given) to this one
+		"pygame",
+		"tornado",
+		"django",
+		"pylons"
+	],
+	"synonyms": [],             // Other names for this technology, given with dashes instead of spaces or underscores
+}

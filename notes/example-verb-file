@@ -1,0 +1,11 @@
+{
+
+	"canonical_name": "open-file",
+	"similar-verbs:": [
+		"close-file",
+		"create-file"
+	],
+	"synonyms": [
+		"read-file"
+	]
+}

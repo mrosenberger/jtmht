@@ -1,0 +1,26 @@
+<html>
+<head>
+	<script language="javascript">
+
+		function canonize_name(name) {
+			return name.replace(/[^0-9a-z _-]/ig, '').replace(/ /g, '-').replace(/_/g, '-').toLowerCase();
+		}
+
+		function send_request() {
+			var search_form_technology = canonize_name(document.getElementById("search_form_technology").value);
+			var search_form_verb = canonize_name(document.getElementById("search_form_verb").value);
+			//var search_form_version = canonize_name(document.getElementById("search_form_version").value);
+			var after_domain_slash = search_form_verb + "/in/" + search_form_technology;
+			var request_uri = "http://localhost:3000/" + after_domain_slash;
+			window.location.href = request_uri;
+		}
+	</script>
+</head>
+<body>
+	Just tell me how to
+	<input type="text" id="search_form_verb" placeholder="verb">
+	in
+	<input type="text" id="search_form_technology" placeholder="language">
+	<input type="button" onclick="javascript:send_request();" value="Submit">
+</body>
+</html>
