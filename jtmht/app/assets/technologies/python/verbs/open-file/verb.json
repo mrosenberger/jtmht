@@ -1,5 +1,4 @@
 {
-
 	"canonical_name": "open-file",
 	"similar-verbs:": [
 		"close-file",
@@ -9,6 +8,6 @@
 		"read-file"
 	],
 	"version_mappings": {
-		"0through1000": "2.7"
+
 	}
 }

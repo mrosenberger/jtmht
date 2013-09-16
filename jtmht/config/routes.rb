@@ -3,8 +3,8 @@ Jtmht::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   get ':verb/in/:technology' => 'tutorial_pages#show'
-  get ':verb/in/:technology/version/:technology_version' => 'tutorial_pages#show'
-  get ':verb/in/:technology/v/:technology_version' => 'tutorial_pages#show'
+  get ':verb/in/:technology/version/:version' => 'tutorial_pages#show',:constraints => { :version => /[^\/]+/ }
+  get ':verb/in/:technology/v/:version' => 'tutorial_pages#show', :constraints => { :version => /[^\/]+/ }
 
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
