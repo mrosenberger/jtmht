@@ -11,3 +11,38 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+	background-image:url('/subtle-notebook.png');
+	margin:0px;
+	width:100%;
+}
+
+.navbar-accent-top {
+	width:100%;
+	background:#6A6A6A;
+	height:5px;
+}
+
+.navbar-main {
+	padding-top:15px;
+	width:100%;
+	text-align:center;
+	background:black;
+	color:white;
+	height:50px;
+	background-image:url('/subtle-grey-wash-wall.png');
+}
+
+.navbar-accent-bottom {
+	width:100%;
+	background:#CCCCCC;
+	height:5px;
+}
+
+.footer {
+	margin:30px;
+	text-align:center;
+	font-size:80%;
+	color:gray;
+}

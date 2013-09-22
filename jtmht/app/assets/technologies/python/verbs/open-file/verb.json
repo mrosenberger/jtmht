@@ -5,9 +5,11 @@
 		"create-file"
 	],
 	"synonyms": [
-		"read-file"
+		"read-file",
+		"read-a-file",
+		"open-a-file"
 	],
 	"version_mappings": {
-
+		
 	}
 }

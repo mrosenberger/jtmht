@@ -1,0 +1,11 @@
+<%= render :partial => 'shared/navbar' %>
+<div class='tut-page-content-wrapper'>
+	<div class='tut-page-header'>
+		Just tell me how to <%= @view_verb %> in <%= @view_technology %>!
+	</div>
+	<div class='tut-page-tutorial-wrapper'>
+		<%= raw(@view_tutorial) %>
+	</div>
+</div>
+<%= render :partial => 'shared/footer' %>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=doxy"></script>

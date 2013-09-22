@@ -3,7 +3,7 @@ class TutorialPagesController < ApplicationController
 	def get_verb_in_technology_for_version(technology, verb, version)
 		version_range_delimiter = "through"
 		if (! TECHNOLOGIES.has_key? technology) or (! TECHNOLOGIES[technology][:verbs].has_key? verb)
-			return nil
+			raise "No such verb '#{verb}' for '#{technology}'"
 		end
 		if version.nil?
 			version = TECHNOLOGIES[technology][:meta][:default_version]
@@ -23,20 +23,38 @@ class TutorialPagesController < ApplicationController
 					end
 				end
 			end
-			return nil
+			raise "No such version '#{version}' for '#{verb}' in '#{technology}', however, tech and verb exist."
 		end
 	end
 
   def show
-  	@param_verb = canonize_name(params[:verb])
-    @param_technology = canonize_name(params[:technology])
-    @param_version = canonize_name(params[:version])
-    Rails.logger.debug @param_version
-  	response = get_verb_in_technology_for_version(@param_technology, @param_verb, @param_version)
+  	canonized_verb = canonize_name(params[:verb])
+    canonized_technology = canonize_name(params[:technology])
+    canonized_version = canonize_name(params[:version])
+    @view_verb = viewify_name(params[:verb])
+    @view_technology = capitalize_words(viewify_name(params[:technology]))
+    @view_version = params[:version] ? viewify_name(params[:version]) : viewify_name(TECHNOLOGIES[canonized_technology][:meta][:default_version])
+  	response = get_verb_in_technology_for_version(canonized_technology, canonized_verb, canonized_version)
   	if response
-  		@tutorial = response
+  		@view_tutorial = response
   	else
-  		@tutorial = "error occurred"
+  		raise "Tutorial page was empty"
+  	end
+  end
+
+  def capitalize_words(s)
+  	if s.nil?
+  		nil
+  	else
+  		s.split.map(&:capitalize).join(' ')
+  	end
+  end
+
+  def viewify_name(name)
+  	if name.nil?
+  		nil
+  	else
+  		name.gsub('-', ' ').gsub('_', ' ')
   	end
   end
 
@@ -44,7 +62,7 @@ class TutorialPagesController < ApplicationController
   	if name.nil?
   		nil
   	else
-  		name.gsub(/[^0-9a-z _-]/i, '').gsub(' ', '-').gsub('_', '-').downcase
+  		name.gsub(/[^0-9a-z. _-]/i, '').gsub(' ', '-').gsub('_', '-').downcase
   	end
   end
 end
