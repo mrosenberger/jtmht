@@ -1,0 +1,19 @@
+{
+	"canonical_name": "check-list-membership",
+	"similar_verbs:": [
+		"add-element-to-list",
+		"get-index-of-element"
+	],
+	"synonyms": [
+		"check-if-list-contains",
+		"list-contains",
+		"check-list-contains",
+		"does-list-contain",
+		"list-membership-check",
+		"list-has-element",
+		"does-list-have-element"
+	],
+	"version_mappings": {
+		
+	}
+}

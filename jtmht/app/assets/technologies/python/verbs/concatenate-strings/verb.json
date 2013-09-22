@@ -1,0 +1,22 @@
+{
+	"canonical_name": "concatenate-strings",
+	"similar_verbs:": [
+		"append-to-string",
+		"create-substring"
+	],
+	"synonyms": [
+		"combine-strings",
+		"concatenate-two-strings",
+		"combine-two-strings",
+		"append-strings",
+		"append-string",
+		"combine-string",
+		"concatenate-string",
+		"string-combine",
+		"string-concatenate",	
+		"string-append"
+	],
+	"version_mappings": {
+		
+	}
+}

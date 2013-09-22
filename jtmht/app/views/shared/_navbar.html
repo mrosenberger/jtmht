@@ -1,18 +1,31 @@
-<div class='navbar-accent-top'></div>
+<script language="javascript">
+	function canonize_name(name) {
+		return name.replace(/[^0-9a-z _-]/ig, '').replace(/ /g, '-').replace(/_/g, '-').toLowerCase();
+	}
+
+	function send_request() {
+		var search_form_technology = canonize_name(document.getElementById("search_form_technology").value);
+		var search_form_verb = canonize_name(document.getElementById("search_form_verb").value);
+		//var search_form_version = canonize_name(document.getElementById("search_form_version").value);
+		var after_domain_slash = search_form_verb + "/in/" + search_form_technology;
+		var request_uri = "http://localhost:3000/" + after_domain_slash;
+		window.location.href = request_uri;
+		return false;
+	}
+</script>
 <div class='navbar-main'>
-	<span style='float:left;margin-left:50px;'>
-		<ul style='list-style:none;margin:0;padding:0;'>
-			<li>Tutorials</li>
-			<li>About</li>
-			<li>FAQ</li>
-		</ul>
+	<ul class='navbar-menu-ul'>
+		<li class='navbar-menu-li'><a class='navbar-menu-anchor' href='#'>Tutorials</a></li>
+		<li class='navbar-menu-li'><a class='navbar-menu-anchor' href='#'>About</a></li>
+		<li class='navbar-menu-li'><a class='navbar-menu-anchor' href='#'>FAQ</a></li>
+	</ul>
+	<span class='navbar-logo-text'>
+		Just Tell Me How To
 	</span>
-	<span style="font:bold 2em/1 'Myriad Pro', 'Gill Sans', 'Gill Sans MT', 'Calibri', sans-serif;">
-		JustTellMeHow.To
-	</span>
-	<span style='float:right;margin-right:50px;'>
-		<input style='' type='text'>
-		<input style='' type='submit'>
-	</span>
+		<form action='javascript:void();' onsubmit='javascript:send_request()' class='navbar-form'>
+			<input class='navbar-form-verb' id='search_form_verb' type='text' placeholder='verb'>
+			in
+			<input class='navbar-form-technology' id='search_form_technology' type='text' placeholder='technology'>
+			<input class='navbar-form-submit' type='submit'>
+		</form>
 </div>
-<div class='navbar-accent-bottom'></div>

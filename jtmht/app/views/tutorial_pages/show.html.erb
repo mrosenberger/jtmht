@@ -8,4 +8,11 @@
 	</div>
 </div>
 <%= render :partial => 'shared/footer' %>
+
+<script language="javascript">
+	var needPrettyprint = document.getElementsByClassName("jtmht-code");
+	for (var i=0; i < needPrettyPrint.length; i++) {
+		needPrettyprint[i].className = needPrettyprint[i].className + " " + "prettyprint";
+	}
+</script>
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=doxy"></script>

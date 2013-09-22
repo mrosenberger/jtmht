@@ -1,13 +1,13 @@
 {
-	"canonical_name": "open-file",
+	"canonical_name": "append-to-file",
 	"similar_verbs:": [
 		"close-file",
 		"create-file"
 	],
 	"synonyms": [
-		"read-file",
-		"read-a-file",
-		"open-a-file"
+		"add-to-file",
+		"append-string-to-file",
+		"append-file"
 	],
 	"version_mappings": {
 		
